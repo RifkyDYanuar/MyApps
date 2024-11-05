@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- login_frame strings -->
+
+    <string name="app_name">Page 2</string>
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="login_string">LOGIN </string>
+    <string name="enter_your_username_string">Enter your username</string>
+    <string name="enter_your_password_string">Enter your password</string>
+    <string name="login_ek1_string">Login</string>
+    <string name="time_ek1_string">9:41</string>
+
+
+    <!--	Register-->
+    <string name="register_ek1_string">REGISTER </string>
+
+    <string name="enter_your_email_string">Enter your Email</string>
+    <string name="deskripsi">Mari kita belajar kotlin!</string>
+    <string name="deskripsijava">Mari kita belajar java!</string>
+    <string name="text">Memuat kelas untuk belajar bersama memulai dari dasar sampe intermediate dalam penggunaan bahasa pemrogaman Kotlin!</string>
+    <string name="textjava">Memuat kelas untuk belajar bersama memulai dari dasar sampe intermediate dalam penggunaan bahasa pemrogaman java!</string>
+    <string name="dashbord">Silahkan untuk meliha status Kelas yang aktif dengan mengklik Navigation Bottom</string>
+</resources>

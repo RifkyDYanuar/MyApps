@@ -1,0 +1,160 @@
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:id="@+id/main"
+	android:layout_height="match_parent"
+	tools:context=".LoginActivity">
+
+	<!--
+	/*
+	 *	This content is generated from the API File Info.
+	 *	(Alt+Shift+Ctrl+I).
+	 *
+	 *	@desc 		
+	 *	@file 		login_frame
+	 *	@date 		Monday 04th of November 2024 11:04:11 AM
+	 *	@title 		Page 2
+	 *	@author 	
+	 *	@keywords 	
+	 *	@generator 	Export Kit v1.3.figma
+	 *
+	 */
+	-->
+
+
+		<RelativeLayout android:id="@+id/content_container" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" >
+
+
+
+			<RelativeLayout android:id="@+id/page_login_frame_ek1"
+				android:layout_marginTop="0dp"
+				android:layout_marginStart="0dp"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				>
+
+				<TextView
+
+					android:layout_gravity="center_horizontal|center"
+					android:gravity="center"
+					android:fontFamily="sans-serif"
+					android:textStyle="bold"
+					android:textSize="20sp"
+					android:textColor="@color/login_color"
+					android:layout_marginLeft="163dp"
+					android:layout_marginTop="67dp"
+					android:layout_width="73dp"
+					android:layout_height="38dp"
+					android:text="@string/login_string"
+					 />
+
+				<FrameLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+					<EditText   android:id="@+id/username"
+						android:background="@drawable/rectangle_4_shape"
+						android:layout_marginStart="52dp"
+						android:layout_marginTop="448dp"
+						android:layout_width="286dp"
+						android:layout_height="58dp"
+						android:textColorHint="#800080"
+						android:hint="Masukkan Username"
+						android:textAlignment="textStart"
+						android:inputType="text"
+						android:paddingStart="50dp"
+						android:singleLine="true"
+						android:ellipsize="end"/>
+
+					<ImageView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/user"
+						android:layout_gravity="center_vertical"
+						android:layout_marginTop="225dp"
+						android:layout_marginStart="60dp"
+						>
+
+					</ImageView>
+
+				</FrameLayout>
+
+
+				<ImageView android:id="@+id/monitor_5212221_1"
+					android:src="@drawable/monitor_5212221_1"
+					android:contentDescription="monitor_5212221_1"
+					 android:layout_marginStart="121dp"
+					android:layout_marginTop="152dp"
+					android:layout_width="147dp"
+					android:layout_height="147dp" />
+
+				<View   android:id="@+id/line_1"
+					android:background="@drawable/line_1_shape"
+					 android:layout_marginStart="100dp"
+					android:layout_marginTop="494dp"
+					android:layout_width="205dp"
+					android:layout_height="1dp" />
+
+
+				<FrameLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+					<EditText   android:id="@+id/password"
+						android:background="@drawable/rectangle_4_shape"
+						android:layout_marginStart="52dp"
+						android:layout_marginTop="533dp"
+						android:layout_width="286dp"
+						android:layout_height="58dp"
+						android:hint="Masukkan Password"
+						android:textColorHint="#800080"
+						android:textAlignment="textStart"
+						android:paddingStart="50dp"
+						android:inputType="textPassword"/>
+
+					<ImageView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/lock"
+						android:layout_gravity="center_vertical"
+						android:layout_marginTop="267dp"
+						android:layout_marginStart="60dp"
+						>
+
+					</ImageView>
+
+				</FrameLayout>
+
+
+				<View   android:id="@+id/line_2"
+					android:background="@drawable/line_2_shape"
+					 android:layout_marginStart="104dp"
+					android:layout_marginTop="579dp"
+					android:layout_width="205dp"
+					android:layout_height="1dp" />
+
+				<Button
+					android:id="@+id/login"
+					android:background="@drawable/rectangle_3_ek1_shape"
+					 android:layout_marginStart="52dp"
+					android:layout_marginTop="618dp"
+					android:layout_width="286dp"
+					android:text="LOGIN"
+					android:layout_height="40dp" />
+
+
+			</RelativeLayout>
+
+
+				<RelativeLayout android:id="@+id/arrow_back"
+					android:layout_marginTop="67dp"
+					android:layout_marginStart="15dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					>
+
+				</RelativeLayout>
+			</RelativeLayout>
+		</RelativeLayout>
