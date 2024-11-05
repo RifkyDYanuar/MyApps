@@ -14,7 +14,6 @@ import androidx.core.view.WindowInsetsCompat;
 public class MenuActivity extends AppCompatActivity {
 
     private Button btnLogin, btnRegister;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +22,6 @@ public class MenuActivity extends AppCompatActivity {
 
         btnLogin = findViewById(R.id.login);
         btnRegister = findViewById(R.id.register);
-
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +37,5 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }

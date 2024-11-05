@@ -1,20 +1,3 @@
-
-	 
-	/*
-	 *	This content is generated from the API File Info.
-	 *	(Alt+Shift+Ctrl+I).
-	 *
-	 *	@desc 		
-	 *	@file 		login_frame
-	 *	@date 		Monday 04th of November 2024 11:04:11 AM
-	 *	@title 		Page 2
-	 *	@author 	
-	 *	@keywords 	
-	 *	@generator 	Export Kit v1.3.figma
-	 *
-	 */
-	
-
 package com.project.myapps;
 
 import android.app.Activity;
@@ -37,8 +20,6 @@ import androidx.appcompat.app.AppCompatActivity;
 	
 	private Button btnLogin;
 	private EditText txtUsername, txtPassword;
-
-
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

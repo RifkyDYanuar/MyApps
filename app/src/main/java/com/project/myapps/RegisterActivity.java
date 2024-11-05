@@ -1,22 +1,5 @@
 
-
-	/*
-	 *	This content is generated from the API File Info.
-	 *	(Alt+Shift+Ctrl+I).
-	 *
-	 *	@desc
-	 *	@file 		register_frame
-	 *	@date 		Monday 04th of November 2024 12:15:27 PM
-	 *	@title 		Page 3
-	 *	@author
-	 *	@keywords
-	 *	@generator 	Export Kit v1.3.figma
-	 *
-	 */
-
-
 	package com.project.myapps;
-
 	import android.app.Activity;
 	import android.content.Intent;
 	import android.content.SharedPreferences;
