@@ -27,7 +27,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="194dp"
-                    android:src="@drawable/kotlin"
+                    android:src="@drawable/bg_kotlin"
                     android:scaleType="centerCrop"
                     />
 
@@ -98,7 +98,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="194dp"
-                    android:src="@drawable/java"
+                    android:src="@drawable/bg_java"
                     android:scaleType="centerCrop"
                     />
 

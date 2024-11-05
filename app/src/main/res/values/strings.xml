@@ -2,7 +2,7 @@
 <resources>
     <!-- login_frame strings -->
 
-    <string name="app_name">Page 2</string>
+    <string name="app_name">My Apps</string>
     <string name="ek_img_content">ExportKit Image</string>
     <string name="login_string">LOGIN </string>
     <string name="enter_your_username_string">Enter your username</string>
@@ -19,5 +19,5 @@
     <string name="deskripsijava">Mari kita belajar java!</string>
     <string name="text">Memuat kelas untuk belajar bersama memulai dari dasar sampe intermediate dalam penggunaan bahasa pemrogaman Kotlin!</string>
     <string name="textjava">Memuat kelas untuk belajar bersama memulai dari dasar sampe intermediate dalam penggunaan bahasa pemrogaman java!</string>
-    <string name="dashbord">Silahkan untuk meliha status Kelas yang aktif dengan mengklik Navigation Bottom</string>
+    <string name="dashbord">Silahkan untuk melihat status Kelas yang aktif dengan mengklik Navigation Bottom</string>
 </resources>

@@ -12,6 +12,7 @@
         android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/notif"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/notifkasi"
@@ -27,6 +28,7 @@
             />
 
         <ImageView
+            android:id="@+id/alert"
             android:layout_width="54dp"
             android:layout_height="54dp"
             android:src="@drawable/akun"
@@ -72,6 +74,7 @@
             />
 
         <ImageView
+            android:id="@+id/kotlin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/kotlin"
@@ -81,7 +84,7 @@
             android:background="@drawable/bg_icon" />
 
         <ImageView
-            android:id="@+id/icon"
+            android:id="@+id/java"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/java"
@@ -129,6 +132,80 @@
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:layout_marginHorizontal="30dp"/>
+
+    <FrameLayout
+        android:id="@+id/rectangle_5"
+        android:background="@drawable/rectangle_5_shape"
+        android:layout_gravity="center"
+        android:layout_width="330dp"
+        android:padding="10dp"
+        android:layout_marginTop="150dp"
+        android:layout_height="80dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif"
+            android:text="Kotlin Menjadi Bahasa pemrogaman"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginVertical="35dp"
+            android:layout_marginStart="10dp"
+            android:fontFamily="sans-serif"
+            android:text="terpuler"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/kotlin"
+            android:layout_gravity="end"
+            android:layout_marginEnd="-10dp"
+            android:layout_marginTop="1dp"/>
+
+    </FrameLayout>
+    <FrameLayout
+        android:background="@drawable/rectangle_5_shape"
+        android:layout_gravity="center"
+        android:layout_width="330dp"
+        android:padding="10dp"
+        android:layout_marginTop="240dp"
+        android:layout_height="80dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif"
+            android:text="Kotlin Menjadi Bahasa pemrogaman"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginVertical="35dp"
+            android:layout_marginStart="10dp"
+            android:fontFamily="sans-serif"
+            android:text="terpuler"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/java"
+            android:layout_gravity="end"
+            android:layout_marginEnd="-10dp"
+            android:layout_marginTop="1dp"/>
+
+    </FrameLayout>
 
 
 </FrameLayout>

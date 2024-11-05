@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation = findViewById(R.id.menu_navbottom);
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_content, new HomeFragment())
+                .replace(R.id.fragment_content, HomeFragment.newInstance(username))
                 .commit();
         bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
