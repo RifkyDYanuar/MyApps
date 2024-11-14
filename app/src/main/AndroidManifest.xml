@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApps"
         tools:targetApi="31">
+        <activity
+            android:name=".PerhitunganGajih"
+            android:exported="true" />
+        <activity
+            android:name=".PerhitunganNilai"
+            android:exported="true" />
         <activity
             android:name=".MenuActivity"
             android:exported="true">
@@ -31,9 +38,7 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -1,10 +1,14 @@
 package com.project.myapps;
 
 import static android.app.ProgressDialog.show;
+import static android.content.Intent.getIntent;
+import static android.content.Intent.getIntentOld;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +17,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,8 +33,9 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
-    private static final String ARG_USERNAME = "username";
     private String mUsername;
+    private DatabaseReference database;
+    private SharedPreferences sharedPreferences;
     public HomeFragment() {
 
     }
@@ -33,7 +44,6 @@ public class HomeFragment extends Fragment {
     public static HomeFragment newInstance(String username) {
         HomeFragment fragment = new HomeFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_USERNAME, username);
         fragment.setArguments(args);
         return fragment;
     }
@@ -41,10 +51,9 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mUsername = getArguments().getString(ARG_USERNAME);
 
-        }
+
+
     }
 
     @Override
@@ -53,12 +62,15 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         TextView usernameTextView = view.findViewById(R.id.username);
-
-        if (mUsername!=null){
-            usernameTextView.setText("Welcome, " + mUsername);
-        }
-
         ImageView btnLogout = view.findViewById(R.id.alert);
+
+
+
+        showName(usernameTextView);
+
+
+
+
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,6 +129,7 @@ public class HomeFragment extends Fragment {
                 })
                 .show();
     }
+
     public void Notifikasi() {
         new MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Notifikasi")
@@ -142,10 +155,19 @@ public class HomeFragment extends Fragment {
 
     }
 
+    public void showName(TextView usernameTextView){
+        Intent intent = getActivity().getIntent();
+        String name = intent.getStringExtra("name");
+        usernameTextView.setText(name);
+    }
+
+
+
 
 
 
 
 
 }
+
 

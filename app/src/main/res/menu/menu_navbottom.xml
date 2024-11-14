@@ -11,4 +11,10 @@
         android:title="Status"
         android:iconTint="@color/white"
         />
+
+    <item android:id="@+id/nav_profil"
+        android:icon="@drawable/profile"
+        android:title="Profile"
+        android:iconTint="@color/white"
+        />
 </menu>

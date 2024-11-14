@@ -23,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        String username = getIntent().getStringExtra("USERNAME");
+        Intent intent = getIntent();
+        String username = intent.getStringExtra("name");
 
 
         bottomNavigation = findViewById(R.id.menu_navbottom);
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
                     selectedFragment = HomeFragment.newInstance(username);
                 } else if (item.getItemId() == R.id.nav_status) {
                     selectedFragment = new StatusFragment();
+                } else if (item.getItemId()== R.id.nav_profil) {
+                    selectedFragment = ProfileFragment.newInstance(username);
                 }
 
                 if (selectedFragment != null) {

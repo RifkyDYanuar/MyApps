@@ -13,13 +13,24 @@ import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-	public class LoginActivity extends AppCompatActivity {
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
+
+public class LoginActivity extends AppCompatActivity {
 
 	
 	private Button btnLogin;
 	private EditText txtUsername, txtPassword;
+	private DatabaseReference database;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -31,38 +42,91 @@ import androidx.appcompat.app.AppCompatActivity;
 		txtUsername = findViewById(R.id.username);
 		txtPassword = findViewById(R.id.password);
 
-		SharedPreferences sharedPreferences = getSharedPreferences("User", MODE_PRIVATE);
 		btnLogin.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				String username = txtUsername.getText().toString();
-				String password = txtPassword.getText().toString();
-
-				String saveUsername = sharedPreferences.getString("username", "");
-				String savePassword = sharedPreferences.getString("password", "");
-
-
-				if (!username.isEmpty() && !password.isEmpty()){
-					if(username.equals(saveUsername) && password.equals(savePassword)){
-						Toast.makeText(LoginActivity.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
-
-						Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-						intent.putExtra("USERNAME",username);
-						intent.putExtra("PASSWORD",password);
-						startActivity(intent);
-					}else {
-						Toast.makeText(LoginActivity.this, "Username dan password salah", Toast.LENGTH_SHORT).show();
-					}
-
-				}else{
-					Toast.makeText(LoginActivity.this, "Username & Password tidak boleh kosong! ", Toast.LENGTH_SHORT).show();
+				if (!validasiUsername() | !validasiPassword()) {
+					return;
+				} else {
+					check();
 				}
-
-
-
 			}
 		});
 
+	}
+
+	public boolean validasiUsername(){
+		String val = txtUsername.getText().toString();
+		if (val.isEmpty()){
+			txtUsername.setError("Username harus diisi");
+			return false;
+		}else {
+			txtUsername.setError(null);
+			return true;
+		}
+
+	}
+	public boolean validasiPassword(){
+		String val = txtPassword.getText().toString();
+		if (val.isEmpty()){
+			txtPassword.setError("Password harus diisi");
+			return false;
+		}else {
+			txtPassword.setError(null);
+			return true;
+		}
+
+	}
+
+	public void check(){
+		String username = txtUsername.getText().toString().trim();
+		String password = txtPassword.getText().toString().trim();
+
+		DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user");
+
+		Query chekUser = reference.orderByChild("username").equalTo(username);
+
+		chekUser.addListenerForSingleValueEvent(new ValueEventListener() {
+			@Override
+			public void onDataChange(@NonNull DataSnapshot snapshot) {
+				if (snapshot.exists()) {
+					txtUsername.setError(null);
+
+					// Ambil password dari database
+					for (DataSnapshot userSnapshot : snapshot.getChildren()) {
+						String passwordFromDb = userSnapshot.child("password").getValue(String.class);
+						if (passwordFromDb != null && passwordFromDb.equals(password)) {
+
+							String nameFromDB = userSnapshot.child("name").getValue(String.class);
+							String emailFromDB = userSnapshot.child("email").getValue(String.class);
+							String usernameFromDB = userSnapshot.child("username").getValue(String.class);
+							String teleponFromDB = userSnapshot.child("telepon").getValue(String.class);
+							// Jika password cocok, lanjut ke MainActivity
+
+
+							Toast.makeText(LoginActivity.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
+							Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+							intent.putExtra("name", nameFromDB);
+
+							startActivity(intent);
+						} else {
+							// Jika password tidak cocok
+							txtPassword.setError("Password Salah");
+							txtPassword.requestFocus();
+						}
+					}
+				} else {
+					// Username tidak ditemukan
+					txtUsername.setError("Username Tidak Ditemukan");
+					txtUsername.requestFocus();
+				}
+			}
+
+			@Override
+			public void onCancelled(@NonNull DatabaseError error) {
+
+			}
+		});
 	}
 }
 	

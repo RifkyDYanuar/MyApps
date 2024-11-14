@@ -16,12 +16,16 @@
 
 	import androidx.appcompat.app.AppCompatActivity;
 
+	import com.google.firebase.database.DatabaseReference;
+	import com.google.firebase.database.FirebaseDatabase;
+
 	public class RegisterActivity extends AppCompatActivity {
 
 
-		private EditText txtEmail, txtUsername, txtPassword;
+		private EditText txtEmail, txtUsername, txtPassword, txtName,txtTelepon;
 		private Button btnRegister;
 		private SharedPreferences sharedPreferences;
+		private DatabaseReference database;
 
 
 
@@ -31,41 +35,51 @@
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.activity_register);
 
-
-			txtEmail = findViewById(R.id.email);
+			txtName = findViewById(R.id.nama);
 			txtUsername = findViewById(R.id.username);
 			txtPassword = findViewById(R.id.password);
 			btnRegister = findViewById(R.id.btnRegister);
+			txtTelepon = findViewById(R.id.telepon);
+			txtEmail = findViewById(R.id.email);
 
+			database = FirebaseDatabase.getInstance().getReferenceFromUrl("https://my-project-db-53507-default-rtdb.firebaseio.com/");
 			sharedPreferences = getSharedPreferences("User", MODE_PRIVATE);
 
 			btnRegister.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View view) {
+					String name = txtName.getText().toString();
 					String username = txtUsername.getText().toString();
 					String password = txtPassword.getText().toString();
+					String telepon = txtTelepon.getText().toString();
 					String email = txtEmail.getText().toString();
 
-					sharedPreferences = getSharedPreferences("User",MODE_PRIVATE);
 
-					if (!username.isEmpty() && !password.isEmpty()){
-							SharedPreferences.Editor editor =sharedPreferences.edit();
-							editor.putString("username" ,username);
-							editor.putString("password",password);
-							editor.putString("email",email);
-							editor.apply();
-						Toast.makeText(RegisterActivity.this, "Register Berhasil", Toast.LENGTH_SHORT).show();
+					if (username.isEmpty() || password.isEmpty() || name.isEmpty() || telepon.isEmpty() || email.isEmpty()) {
+						Toast.makeText(getApplicationContext(), "Semua data harus diisi", Toast.LENGTH_SHORT).show();
+						txtName.setError("Nama harus diisi");
+						txtUsername.setError("Username harus diisi");
+						txtPassword.setError("Password harus diisi");
+						txtTelepon.setError("Telepon harus diisi");
+						txtEmail.setError("Email harus diisi");
 
-						Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-						intent.putExtra("USERNAME", username);
-						intent.putExtra("PASSWORD", password);
 
+
+					} else {
+						database = FirebaseDatabase.getInstance().getReference("user");
+						database.child(username).child("name").setValue(name);
+						database.child(username).child("username").setValue(username);
+						database.child(username).child("password").setValue(password);
+						database.child(username).child("telepon").setValue(telepon);
+						database.child(username).child("email").setValue(email);
+						Toast.makeText(getApplicationContext(), "Register Berhasil", Toast.LENGTH_SHORT).show();
+						Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
 						startActivity(intent);
-						finish();;
+						finish();
 
-					}else{
-						Toast.makeText(RegisterActivity.this, "Semua field harus diisi, Login Gagal ", Toast.LENGTH_SHORT).show();
 					}
+
+
 				}
 			});
 

@@ -1,144 +1,116 @@
-<RelativeLayout
+<FrameLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:id="@+id/main"
+	android:background="@drawable/bg_purple"
 	android:layout_height="match_parent"
 	tools:context=".LoginActivity">
 
+	<ImageView android:id="@+id/monitor_5212221_1"
+		android:src="@drawable/monitor_5212221_1"
+		android:contentDescription="monitor_5212221_1"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginTop="70dp"
+		android:layout_width="wrap_content"
+		android:layout_height="147dp" />
 
-		<RelativeLayout android:id="@+id/content_container" 
-			android:layout_width="wrap_content" 
-			android:layout_height="wrap_content" >
 
-
-
-			<RelativeLayout android:id="@+id/page_login_frame_ek1"
-				android:layout_marginTop="0dp"
-				android:layout_marginStart="0dp"
+		<androidx.cardview.widget.CardView
+			android:outlineAmbientShadowColor="@color/black"
+			android:layout_width="match_parent"
+			android:layout_height="400dp"
+			android:layout_gravity="center"
+			android:elevation="90dp"
+			app:cardCornerRadius="20dp"
+			android:layout_marginStart="20dp"
+			android:layout_marginEnd="20dp"
+			android:layout_marginTop="70dp">
+			<TextView
+				android:textAlignment="center"
+				android:fontFamily="sans-serif"
+				android:textStyle="bold"
+				android:textSize="20sp"
+				android:textColor="@color/login_color"
 				android:layout_width="match_parent"
-				android:layout_height="match_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/login_string"
+				android:layout_marginTop="50dp"
+				/>
+			<EditText   android:id="@+id/username"
+				android:background="@drawable/rectangle_4_shape"
+				android:layout_marginStart="30dp"
+				android:layout_marginEnd="30dp"
+				android:layout_marginTop="100dp"
+				android:layout_width="match_parent"
+				android:layout_height="58dp"
+				android:textColorHint="#800080"
+				android:hint="Masukkan Username"
+				android:textAlignment="textStart"
+				android:inputType="text"
+				android:paddingStart="60dp"
+				android:singleLine="true"
+				android:ellipsize="end"/>
+
+			<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/user"
+				android:layout_marginTop="115dp"
+				android:layout_marginStart="45dp"
+				>
+			</ImageView>
+
+			<View   android:id="@+id/line_1"
+				android:background="@drawable/line_1_shape"
+				android:layout_marginStart="90dp"
+				android:layout_marginTop="147dp"
+				android:layout_width="170dp"
+				android:layout_height="1dp" />
+
+			<EditText   android:id="@+id/password"
+				android:background="@drawable/rectangle_4_shape"
+				android:layout_marginStart="30dp"
+				android:layout_marginEnd="30dp"
+				android:layout_marginTop="200dp"
+				android:layout_width="match_parent"
+				android:layout_height="58dp"
+				android:hint="Masukkan Password"
+				android:textColorHint="#800080"
+				android:textAlignment="textStart"
+				android:paddingStart="60dp"
+				android:inputType="textPassword"/>
+
+			<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/lock"
+				android:layout_marginTop="215dp"
+				android:layout_marginStart="45dp"
 				>
 
-				<TextView
+			</ImageView>
 
-					android:layout_gravity="center_horizontal|center"
-					android:gravity="center"
-					android:fontFamily="sans-serif"
-					android:textStyle="bold"
-					android:textSize="20sp"
-					android:textColor="@color/login_color"
-					android:layout_marginLeft="163dp"
-					android:layout_marginTop="67dp"
-					android:layout_width="73dp"
-					android:layout_height="38dp"
-					android:text="@string/login_string"
-					 />
+			<View   android:id="@+id/line_2"
+				android:background="@drawable/line_2_shape"
+				android:layout_marginStart="90dp"
+				android:layout_marginTop="247dp"
+				android:layout_width="170dp"
+				android:layout_height="1dp" />
 
-				<FrameLayout
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content">
-					<EditText   android:id="@+id/username"
-						android:background="@drawable/rectangle_4_shape"
-						android:layout_marginStart="52dp"
-						android:layout_marginTop="448dp"
-						android:layout_width="286dp"
-						android:layout_height="58dp"
-						android:textColorHint="#800080"
-						android:hint="Masukkan Username"
-						android:textAlignment="textStart"
-						android:inputType="text"
-						android:paddingStart="50dp"
-						android:singleLine="true"
-						android:ellipsize="end"/>
+			<Button
+				android:id="@+id/login"
+				android:background="@drawable/rectangle_3_ek1_shape"
+				android:layout_marginStart="30dp"
+				android:layout_marginTop="300dp"
+				android:layout_marginEnd="30dp"
+				android:layout_width="match_parent"
+				android:text="LOGIN"
+				android:layout_height="wrap_content" />
 
-					<ImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:src="@drawable/user"
-						android:layout_gravity="center_vertical"
-						android:layout_marginTop="225dp"
-						android:layout_marginStart="60dp"
-						>
-
-					</ImageView>
-
-				</FrameLayout>
+		</androidx.cardview.widget.CardView>
 
 
-				<ImageView android:id="@+id/monitor_5212221_1"
-					android:src="@drawable/monitor_5212221_1"
-					android:contentDescription="monitor_5212221_1"
-					 android:layout_marginStart="121dp"
-					android:layout_marginTop="152dp"
-					android:layout_width="147dp"
-					android:layout_height="147dp" />
+</FrameLayout>
 
-				<View   android:id="@+id/line_1"
-					android:background="@drawable/line_1_shape"
-					 android:layout_marginStart="100dp"
-					android:layout_marginTop="494dp"
-					android:layout_width="205dp"
-					android:layout_height="1dp" />
-
-
-				<FrameLayout
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content">
-					<EditText   android:id="@+id/password"
-						android:background="@drawable/rectangle_4_shape"
-						android:layout_marginStart="52dp"
-						android:layout_marginTop="533dp"
-						android:layout_width="286dp"
-						android:layout_height="58dp"
-						android:hint="Masukkan Password"
-						android:textColorHint="#800080"
-						android:textAlignment="textStart"
-						android:paddingStart="50dp"
-						android:inputType="textPassword"/>
-
-					<ImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:src="@drawable/lock"
-						android:layout_gravity="center_vertical"
-						android:layout_marginTop="267dp"
-						android:layout_marginStart="60dp"
-						>
-
-					</ImageView>
-
-				</FrameLayout>
-
-
-				<View   android:id="@+id/line_2"
-					android:background="@drawable/line_2_shape"
-					 android:layout_marginStart="104dp"
-					android:layout_marginTop="579dp"
-					android:layout_width="205dp"
-					android:layout_height="1dp" />
-
-				<Button
-					android:id="@+id/login"
-					android:background="@drawable/rectangle_3_ek1_shape"
-					 android:layout_marginStart="52dp"
-					android:layout_marginTop="618dp"
-					android:layout_width="286dp"
-					android:text="LOGIN"
-					android:layout_height="40dp" />
-
-
-			</RelativeLayout>
-
-
-				<RelativeLayout android:id="@+id/arrow_back"
-					android:layout_marginTop="67dp"
-					android:layout_marginStart="15dp"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					>
-
-				</RelativeLayout>
-			</RelativeLayout>
-		</RelativeLayout>

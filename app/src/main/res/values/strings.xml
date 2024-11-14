@@ -20,4 +20,6 @@
     <string name="text">Memuat kelas untuk belajar bersama memulai dari dasar sampe intermediate dalam penggunaan bahasa pemrogaman Kotlin!</string>
     <string name="textjava">Memuat kelas untuk belajar bersama memulai dari dasar sampe intermediate dalam penggunaan bahasa pemrogaman java!</string>
     <string name="dashbord">Silahkan untuk melihat status Kelas yang aktif dengan mengklik Navigation Bottom</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
