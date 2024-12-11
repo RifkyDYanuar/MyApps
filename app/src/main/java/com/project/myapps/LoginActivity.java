@@ -30,11 +30,9 @@ public class LoginActivity extends AppCompatActivity {
 	
 	private Button btnLogin;
 	private EditText txtUsername, txtPassword;
-	private DatabaseReference database;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 
@@ -92,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
 				if (snapshot.exists()) {
 					txtUsername.setError(null);
 
-					// Ambil password dari database
+
 					for (DataSnapshot userSnapshot : snapshot.getChildren()) {
 						String passwordFromDb = userSnapshot.child("password").getValue(String.class);
 						if (passwordFromDb != null && passwordFromDb.equals(password)) {
@@ -101,16 +99,17 @@ public class LoginActivity extends AppCompatActivity {
 							String emailFromDB = userSnapshot.child("email").getValue(String.class);
 							String usernameFromDB = userSnapshot.child("username").getValue(String.class);
 							String teleponFromDB = userSnapshot.child("telepon").getValue(String.class);
-							// Jika password cocok, lanjut ke MainActivity
-
-
 							Toast.makeText(LoginActivity.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
 							Intent intent = new Intent(LoginActivity.this, MainActivity.class);
 							intent.putExtra("name", nameFromDB);
+							intent.putExtra("email", emailFromDB);
+							intent.putExtra("username", usernameFromDB);
+							intent.putExtra("password", passwordFromDb);
+							intent.putExtra("telepon", teleponFromDB);
 
 							startActivity(intent);
 						} else {
-							// Jika password tidak cocok
+
 							txtPassword.setError("Password Salah");
 							txtPassword.requestFocus();
 						}

@@ -56,45 +56,22 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
         TextView txtName = view.findViewById(R.id.nama);
-        TextInputEditText Email = view.findViewById(R.id.email);
-        TextInputEditText Telepon = view.findViewById(R.id.Telepon);
+        TextView txtEmail = view.findViewById(R.id.email);
+        TextView txtUsername = view.findViewById(R.id.username);
+        TextView txtPassword = view.findViewById(R.id.password);
+        TextView txtTelepon = view.findViewById(R.id.telepon);
+
+        showData(txtName,txtEmail,txtUsername,txtPassword,txtTelepon);
+
         ImageView instagram = view.findViewById(R.id.ig_generate);
         ImageView whatsapp = view.findViewById(R.id.wa_generate);
         ImageView writing = view.findViewById(R.id.writing);
-
         String phoneNumber = "6289657786880";
         String url = "https://wa.me/" + phoneNumber;
 
-
-
-
-
-        database = FirebaseDatabase.getInstance().getReference("user");
-
-
-        if (mUsername != null) {
-            database.child(mUsername).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if(snapshot.exists()){
-                        String username = snapshot.child("name").getValue(String.class);
-                        txtName.setText(username);
-                        String email = snapshot.child("email").getValue(String.class);
-                        Email.setText(email);
-                        String telepon = snapshot.child("telepon").getValue(String.class);
-                        Telepon.setText(telepon);
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-        }
         whatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -115,9 +92,12 @@ public class ProfileFragment extends Fragment {
         writing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 showSheet();
             }
         });
+
+
 
         return view;
     }
@@ -166,6 +146,24 @@ public class ProfileFragment extends Fragment {
 
 
 
+    }
+
+    public void showData(TextView txtNama,TextView txtEmail, TextView txtUsername, TextView txtPassword, TextView txtTelepon){
+
+
+        Intent intent = getActivity().getIntent();
+
+        String name = intent.getStringExtra("name");
+        String email = intent.getStringExtra("email");
+        String username = intent.getStringExtra("username");
+        String password = intent.getStringExtra("password");
+        String telepon = intent.getStringExtra("telepon");
+
+        txtNama.setText(name);
+        txtEmail.setText(email);
+        txtUsername.setText(username);
+        txtPassword.setText(password);
+        txtTelepon.setText(telepon);
     }
 
 }

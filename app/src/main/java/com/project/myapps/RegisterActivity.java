@@ -67,18 +67,17 @@
 
 					} else {
 						database = FirebaseDatabase.getInstance().getReference("user");
-						database.child(username).child("name").setValue(name);
-						database.child(username).child("username").setValue(username);
-						database.child(username).child("password").setValue(password);
-						database.child(username).child("telepon").setValue(telepon);
-						database.child(username).child("email").setValue(email);
+						database.child(name).child("name").setValue(name);
+						database.child(name).child("username").setValue(username);
+						database.child(name).child("password").setValue(password);
+						database.child(name).child("telepon").setValue(telepon);
+						database.child(name).child("email").setValue(email);
 						Toast.makeText(getApplicationContext(), "Register Berhasil", Toast.LENGTH_SHORT).show();
 						Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
 						startActivity(intent);
 						finish();
 
 					}
-
 
 				}
 			});

@@ -23,7 +23,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Media -->
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="194dp"
@@ -153,11 +152,5 @@
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
-
     </LinearLayout>
-
-
-
-
-
 </ScrollView>

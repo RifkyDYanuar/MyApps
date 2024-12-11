@@ -35,7 +35,6 @@ import com.google.firebase.database.ValueEventListener;
 public class HomeFragment extends Fragment {
     private String mUsername;
     private DatabaseReference database;
-    private SharedPreferences sharedPreferences;
     public HomeFragment() {
 
     }
@@ -45,6 +44,7 @@ public class HomeFragment extends Fragment {
         HomeFragment fragment = new HomeFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
+
         return fragment;
     }
 
