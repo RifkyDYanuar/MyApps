@@ -22,4 +22,16 @@
     <string name="dashbord">Silahkan untuk melihat status Kelas yang aktif dengan mengklik Navigation Bottom</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tanggal">Masukan tanggal sesuai kelas yang tertera</string>
+    <string name="waktu">Masukan waktu sesuai kelas yang tertera</string>
+
+
+    <!-- TAB LAYOUT-->
+    <string name="tab1">INI HALAMAN TABS 1</string>
+    <string name="tab2">INI HALAMAN TABS 2</string>
+    <string name="tab3">INI HALAMAN TABS 3</string>
+    <string name="heroes_name">Nama Pahlawan</string>
+    <string name="heroes_details">Detail</string>
+
+
 </resources>

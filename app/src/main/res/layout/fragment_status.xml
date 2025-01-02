@@ -59,9 +59,38 @@
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?android:attr/textColorSecondary"
                         />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_weight="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Kelas pagi :"/>
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Senin - Rabu 07:00- 11:00"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_weight="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Kelas Siang :"/>
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Senin - Rabu 13:00- 16:00"/>
+                    </LinearLayout>
 
                 </LinearLayout>
-
                 <!-- Buttons -->
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -131,6 +160,36 @@
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?android:attr/textColorSecondary"
                         />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_weight="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Kelas Pagi :"/>
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Kamis - Sabtu 07:00- 11:00"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_weight="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Kelas Siang :"/>
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Kamis - Sabtu 13:00- 16:00"/>
+                    </LinearLayout>
 
                 </LinearLayout>
 

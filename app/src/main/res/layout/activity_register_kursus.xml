@@ -103,11 +103,49 @@
                     android:focusableInTouchMode="false"
                     android:hint="Masukkan Prodi"/>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_weight="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal"
+                    android:fontFamily="@font/poppins_bold"/>
+                <EditText
+                    android:id="@+id/tanggal"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/tanggal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_weight="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Waktu"
+                    android:fontFamily="@font/poppins_bold"/>
+                <EditText
+                    android:id="@+id/waktu"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/waktu"/>
+            </LinearLayout>
+
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <Button
+        android:id="@+id/daftar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"

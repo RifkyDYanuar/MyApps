@@ -1,4 +1,4 @@
-package com.project.myapps.sampledata;
+package com.project.myapps.ItemData;
 
 import java.util.ArrayList;
 import java.util.List;

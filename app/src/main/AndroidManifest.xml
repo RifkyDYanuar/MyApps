@@ -13,6 +13,21 @@
         android:theme="@style/Theme.MyApps"
         tools:targetApi="31">
         <activity
+            android:name=".RecyleviewMain"
+            android:exported="true" />
+        <activity
+            android:name=".TabMainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Tab3"
+            android:exported="false" />
+        <activity
+            android:name=".Tab2"
+            android:exported="false" />
+        <activity
+            android:name=".Tab1"
+            android:exported="false" />
+        <activity
             android:name=".RegisterMahasiswa"
             android:exported="false" />
         <activity
@@ -35,7 +50,7 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />

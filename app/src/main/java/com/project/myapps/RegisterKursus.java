@@ -1,28 +1,31 @@
 package com.project.myapps;
 
-import android.content.DialogInterface;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TimePicker;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.project.myapps.sampledata.ItemNama;
-import com.project.myapps.sampledata.ItemProdi;
+import com.project.myapps.ItemData.ItemNama;
+import com.project.myapps.ItemData.ItemProdi;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class RegisterKursus extends AppCompatActivity implements TextWatcher {
-     EditText  kelas, prodi;
+     EditText  kelas, prodi,Tanggal,Waktu;
     AutoCompleteTextView nama;
     Button daftar;
 
@@ -33,6 +36,9 @@ public class RegisterKursus extends AppCompatActivity implements TextWatcher {
         setContentView(R.layout.activity_register_kursus);
         nama = findViewById(R.id.listNama);
         kelas = findViewById(R.id.kelas);
+        prodi = findViewById(R.id.listProdi);
+
+        daftar = findViewById(R.id.daftar);
 
 
         List<ItemNama> items = ItemNama.getDataNama();
@@ -42,6 +48,21 @@ public class RegisterKursus extends AppCompatActivity implements TextWatcher {
         );
         nama.setAdapter(adapter);
         nama.addTextChangedListener(this);
+
+        Tanggal = findViewById(R.id.tanggal);
+        Waktu = findViewById(R.id.waktu);
+        Tanggal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setTanggal();
+            }
+        });
+        Waktu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setWaktu();
+            }
+        });
 
     }
 
@@ -83,6 +104,37 @@ public class RegisterKursus extends AppCompatActivity implements TextWatcher {
             dialog.dismiss();
         });
     }
+
+    public void setWaktu(){
+        final Calendar calendar = Calendar.getInstance();
+        int hours = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+
+        TimePickerDialog timePickerDialog = new TimePickerDialog(RegisterKursus.this,
+                new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hours, int minute) {
+                Waktu.setText(hours + ":" + minute);
+            }
+        }, hours, minute, true);
+        timePickerDialog.show();
+
+    }
+    public void setTanggal(){
+        final Calendar calendar =Calendar.getInstance();
+        int tahun = calendar.get(Calendar.YEAR);
+        int bulan = calendar.get(Calendar.MONTH);
+        int tanggal = calendar.get(Calendar.DAY_OF_MONTH);
+        DatePickerDialog datePickerDialog = new DatePickerDialog(RegisterKursus.this,
+                new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int tahun, int bulan, int tanggal) {
+                Tanggal.setText(tanggal + "-" + (bulan + 1) + "-" + tahun);
+            }
+        }, tahun, bulan, tanggal);
+        datePickerDialog.show();
+    }
+
 
 
 
