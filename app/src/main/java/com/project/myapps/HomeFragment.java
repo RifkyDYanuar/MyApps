@@ -83,7 +83,8 @@ public class HomeFragment extends Fragment {
         notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Notifikasi();
+                Intent intent = new Intent(requireActivity(), TabMainActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -130,12 +131,7 @@ public class HomeFragment extends Fragment {
                 .show();
     }
 
-    public void Notifikasi() {
-        new MaterialAlertDialogBuilder(requireContext())
-                .setTitle("Notifikasi")
-                .setMessage("Ini adalah isi notifikasi - notifikasi aplikasi ini")
-                .show();
-    }
+
     public void detailKelas() {
         new MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Detail Kelas Kotlin")

@@ -30,8 +30,27 @@
     <string name="tab1">INI HALAMAN TABS 1</string>
     <string name="tab2">INI HALAMAN TABS 2</string>
     <string name="tab3">INI HALAMAN TABS 3</string>
+
+
+
+
     <string name="heroes_name">Nama Pahlawan</string>
     <string name="heroes_details">Detail</string>
 
+    <!--    Menu-->
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
+    <string name="cardview">Cardview</string>
+    <string name="favorite">Favorite</string>
+    <string name="share">Share</string>
 
+
+<!--    Notif-->
+    <string name="notif_title">Notifikasi Kursus</string>
+    <string name="notif_title_akun">Notifikasi Akun</string>
+    <string name="notif_title_sistem">Notifikasi Sistem</string>
+    <string name="notif_content1">Selamat! anda berhasil mendaftar kursus bahasa kotlin, silahkan untuk mengikuti arahan Mentor</string>
+    <string name="notif_content2">Selamat! anda berhasil mendaftar kursus bahasa java, silahkan untuk mengikuti arahan Mentor</string>
+    <string name="notif_account">Selamat! anda berhasil mendaftar akun sebagai pelajar , silahkan memulai ekplore tentang kursus di MyApps</string>
+    <string name="notif_sistem">Pembaruan sistem sudah tersedia! Silahkan update untuk menjelajah fitur baru pada Versi 2.70</string>
 </resources>

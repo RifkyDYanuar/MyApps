@@ -17,7 +17,6 @@ public class TabMainActivity extends TabActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_tab);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -25,20 +24,17 @@ public class TabMainActivity extends TabActivity {
             return insets;
         });
         tabHost = getTabHost();
-        this.setNewTab(this, tabHost,"tab1", "Tab 1",R.drawable.ic_launcher_background, new Intent(this, Tab1.class));
-        this.setNewTab(this, tabHost,"tab2", "Tab 2",R.drawable.ic_launcher_background, new Intent(this, Tab2.class));
-        this.setNewTab(this, tabHost,"tab3", "Tab 3",R.drawable.ic_launcher_background, new Intent(this, Tab3.class));
-
-
+        this.setNewTab(this, tabHost,"tab1", "Kursus",R.drawable.ic_launcher_background,
+                new Intent(this, Tab1.class));
+        this.setNewTab(this, tabHost,"tab2", "Akun",R.drawable.ic_launcher_background,
+                new Intent(this, Tab2.class));
+        this.setNewTab(this, tabHost,"tab3", "Sistem",R.drawable.ic_launcher_background,
+                new Intent(this, Tab3.class));
     }
     private void setNewTab(Context context,TabHost tabHost , String tag, String title, int icon, Intent intentid) {
         TabHost.TabSpec tabSpec = tabHost.newTabSpec(tag);
         tabSpec.setIndicator(title, ContextCompat.getDrawable(this,icon));
         tabSpec.setContent(intentid);
         tabHost.addTab(tabSpec);
-
-  }
-
-
-
+    }
 }

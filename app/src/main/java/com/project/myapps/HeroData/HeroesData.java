@@ -16,8 +16,6 @@ public class HeroesData {
             "Soekarno",
             "Soepomo",
             "Tan Malaka"
-
-
     };
 
     private static String[] heroesDetail = {

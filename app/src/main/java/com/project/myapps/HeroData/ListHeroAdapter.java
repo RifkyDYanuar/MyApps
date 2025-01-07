@@ -23,11 +23,9 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
     public ListHeroAdapter(ArrayList<HeroClass>list){
         this.listhero=list;
     }
-
     @NonNull
     @Override
     public ListHeroAdapter.ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_item_hero, parent, false);
         return new ListViewHolder(view);
     }
@@ -41,10 +39,7 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
                 .into(holder.imagePhoto);
         holder.tvName.setText(hero.getNama());
         holder.tvDetail.setText(hero.getDetail());
-
-
     }
-
     @Override
     public int getItemCount() {
         return listhero.size();
